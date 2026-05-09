@@ -82,6 +82,11 @@ This repo is also a maintainer practice lab. Use it to learn:
 
 See [docs/MAINTAINER_PLAYBOOK.md](docs/MAINTAINER_PLAYBOOK.md).
 
+## Launch Kit
+
+Want to invite contributors? Use the copy-ready messages in
+[docs/COMMUNITY_LAUNCH_KIT.md](docs/COMMUNITY_LAUNCH_KIT.md).
+
 ## Community Standard
 
 Be clear, kind, and useful. Short answers are fine when they solve the problem, but the best answers teach the next person too.

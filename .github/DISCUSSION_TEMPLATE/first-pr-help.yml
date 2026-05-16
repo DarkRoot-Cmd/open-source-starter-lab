@@ -1,0 +1,28 @@
+title: "[First PR Help] "
+labels: ["question", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template if you want help choosing your first issue.
+  - type: input
+    id: skills
+    attributes:
+      label: What do you know already?
+      placeholder: HTML, CSS, JavaScript, Python, TypeScript, docs, testing...
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: What do you want to practice?
+      placeholder: I want to make my first pull request, learn Git, fix docs, write a small test...
+    validations:
+      required: true
+  - type: textarea
+    id: blockers
+    attributes:
+      label: What feels confusing right now?
+      placeholder: Forking, branches, pushing, choosing an issue, CI errors...
+    validations:
+      required: false

@@ -48,6 +48,8 @@ I know: HTML, CSS, JavaScript, Python, TypeScript, docs, or testing.
 I want to make my first pull request. Which issue should I take?
 ```
 
+If Git itself is confusing, that is okay. Ask anyway. This repo is meant to be a no-shame place for beginner GitHub questions.
+
 More useful searches:
 
 - Beginner friendly issues: https://github.com/P-r-e-m-i-u-m/open-source-starter-lab/issues?q=is%3Aissue+is%3Aopen+label%3A%22beginner+friendly%22

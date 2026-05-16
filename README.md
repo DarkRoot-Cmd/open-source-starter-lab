@@ -22,6 +22,7 @@ If you are new here, start with [docs/START_HERE.md](docs/START_HERE.md).
 | Ask which issue to take | [Introduce yourself](https://github.com/P-r-e-m-i-u-m/open-source-starter-lab/discussions/26) |
 | Add your first merge | [First Merge Wall](docs/FIRST_MERGE_WALL.md) |
 | Learn maintainer habits | [Maintainer playbook](docs/MAINTAINER_PLAYBOOK.md) |
+| Share this with beginners | [Community discovery kit](docs/COMMUNITY_DISCOVERY_KIT.md) |
 
 ## Why This Repo Exists
 
@@ -89,6 +90,21 @@ Use these filtered searches:
 - [Unassigned issues](https://github.com/P-r-e-m-i-u-m/open-source-starter-lab/issues?q=is%3Aissue+is%3Aopen+no%3Aassignee)
 
 If you want to work on something, comment on the issue first so nobody duplicates your effort.
+
+## No-Shame Git Help
+
+If you are stuck on Git, GitHub, branches, pull requests, or CI, ask in [Discussions](https://github.com/P-r-e-m-i-u-m/open-source-starter-lab/discussions/26) or the [weekly first PR help thread](https://github.com/P-r-e-m-i-u-m/open-source-starter-lab/discussions/27). Beginner questions are welcome here.
+
+Good questions include:
+
+- what command you ran
+- what happened
+- what you expected
+- what operating system you use
+
+## Share This Repo
+
+If someone asks where to make a first pull request or first open-source contribution, use the copy-ready messages in [docs/COMMUNITY_DISCOVERY_KIT.md](docs/COMMUNITY_DISCOVERY_KIT.md).
 
 ## Project Structure
 

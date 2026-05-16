@@ -125,6 +125,96 @@ export const dailyIssueBacklog: DailyIssue[] = [
     helpfulNotes: ["This supports real community help without encouraging badge farming."]
   },
   {
+    title: "Add CLI tests for unknown commands",
+    labels: ["daily starter issue", "cli", "good first issue", "testing"],
+    context: "The CLI throws an error for unknown commands, but the behavior should be covered by a small test so future changes do not break it.",
+    goal: "Add a focused test that proves unknown CLI commands fail with a useful message.",
+    suggestedFiles: ["tests/cli.test.ts", "package.json", "docs/CLI.md"],
+    acceptanceCriteria: [
+      "Add a test that runs the CLI with an unknown command",
+      "Assert the command exits unsuccessfully",
+      "Assert the output includes `Unknown command`",
+      "Keep the test small and easy to read"
+    ],
+    helpfulNotes: [
+      "Use Node's built-in test helpers or a simple child process assertion.",
+      "This is a good first code contribution because the behavior already exists."
+    ]
+  },
+  {
+    title: "Add a `--json` output option for starter issue ideas",
+    labels: ["daily starter issue", "cli", "help wanted", "developer tooling"],
+    context: "The `issues` command prints human-readable text, but automation examples are easier when the CLI can also return JSON.",
+    goal: "Add a `node dist/src/cli.js issues --json` mode that prints starter issue ideas as JSON.",
+    suggestedFiles: ["src/cli.ts", "tests/smoke.test.ts", "docs/CLI.md"],
+    acceptanceCriteria: [
+      "Support `issues --json` without changing the default text output",
+      "Return title, label, difficulty, goal, and acceptance criteria",
+      "Add or update a test for the JSON output",
+      "Document the new option in `docs/CLI.md`"
+    ],
+    helpfulNotes: [
+      "Keep the output stable and machine-readable.",
+      "Do not add a new dependency for this."
+    ]
+  },
+  {
+    title: "Add a command that lists available contributor profiles",
+    labels: ["daily starter issue", "cli", "good first issue", "developer tooling"],
+    context: "The CLI supports beginner and maintainer profiles, but users only discover that by reading help text.",
+    goal: "Add a small `profiles` command that lists supported checklist profiles.",
+    suggestedFiles: ["src/cli.ts", "docs/CLI.md", "tests/smoke.test.ts"],
+    acceptanceCriteria: [
+      "Add `node dist/src/cli.js profiles`",
+      "Print `beginner` and `maintainer`",
+      "Include one sentence explaining when to use each profile",
+      "Add a smoke test or assertion for the command"
+    ],
+    helpfulNotes: ["This is intentionally small so a new contributor can finish it in one PR."]
+  },
+  {
+    title: "Improve daily issue bot label coverage",
+    labels: ["daily starter issue", "developer tooling", "help wanted"],
+    context: "The daily issue bot creates labels when needed, but newer backlog labels should also get clear colors and descriptions.",
+    goal: "Improve the label map used by the daily issue bot so generated issues look consistent.",
+    suggestedFiles: ["scripts/createDailyIssue.ts", "docs/DAILY_ISSUE_BOT.md"],
+    acceptanceCriteria: [
+      "Add colors for `testing` and `developer tooling`",
+      "Add descriptions for generated labels where useful",
+      "Keep existing labels unchanged",
+      "Run `npm run issue:daily` to verify the dry-run still works"
+    ],
+    helpfulNotes: ["This is a maintainer-quality task because it improves automation hygiene."]
+  },
+  {
+    title: "Add a guide for reproducing a bug before opening a PR",
+    labels: ["daily starter issue", "documentation", "good first issue", "testing"],
+    context: "New contributors often jump into a fix before they can reproduce the problem, which makes reviews harder.",
+    goal: "Create a short guide for writing reproduction steps and expected behavior.",
+    suggestedFiles: ["docs/BUG_REPRODUCTION_GUIDE.md", "CONTRIBUTING.md"],
+    acceptanceCriteria: [
+      "Explain actual behavior vs expected behavior",
+      "Show a copy-paste reproduction template",
+      "Mention command output and screenshots when useful",
+      "Link the guide from `CONTRIBUTING.md`"
+    ],
+    helpfulNotes: ["This helps contributors sound professional in issues and PRs."]
+  },
+  {
+    title: "Add issue filtering examples for contributors",
+    labels: ["daily starter issue", "documentation", "community", "good first issue"],
+    context: "GitHub issue filters are powerful, but beginners may not know how to find open tasks by label or difficulty.",
+    goal: "Add examples for filtering issues by label, state, and assignment status.",
+    suggestedFiles: ["docs/FINDING_ISSUES.md", "README.md"],
+    acceptanceCriteria: [
+      "Show filters for `good first issue`, `help wanted`, and `cli`",
+      "Explain `is:open` and `no:assignee`",
+      "Include direct links to useful repo searches",
+      "Keep the guide practical and short"
+    ],
+    helpfulNotes: ["This can make the repo easier for visitors to enter without asking first."]
+  },
+  {
     title: "Add a guide for creating useful issue titles",
     labels: ["daily starter issue", "documentation", "good first issue"],
     context: "Clear issue titles help contributors scan the backlog quickly.",

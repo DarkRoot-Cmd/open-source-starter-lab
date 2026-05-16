@@ -41,6 +41,28 @@ export const issueIdeas: IssueIdea[] = [
     ]
   },
   {
+    title: "Add CLI tests for error paths",
+    label: "good first issue",
+    difficulty: "medium",
+    goal: "Add tests that cover invalid profiles and unknown commands.",
+    acceptanceCriteria: [
+      "Run the CLI from a test",
+      "Assert invalid input fails",
+      "Document the tested commands"
+    ]
+  },
+  {
+    title: "Add JSON output for issue ideas",
+    label: "help wanted",
+    difficulty: "medium",
+    goal: "Let the CLI print starter issue ideas as JSON for automation examples.",
+    acceptanceCriteria: [
+      "Keep the default text output",
+      "Add an `issues --json` option",
+      "Update docs/CLI.md with the new flag"
+    ]
+  },
+  {
     title: "Add a contribution glossary",
     label: "good first issue",
     difficulty: "easy",

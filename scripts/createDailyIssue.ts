@@ -80,7 +80,21 @@ async function ensureLabels(owner: string, repo: string, token: string, labels: 
     "beginner friendly": "c2e0c6",
     "help wanted": "008672",
     community: "fbca04",
-    cli: "d876e3"
+    cli: "d876e3",
+    testing: "0e8a16",
+    "developer tooling": "1d76db"
+  };
+
+  const labelDescriptions: Record<string, string> = {
+    "daily starter issue": "Generated from the curated daily issue backlog",
+    documentation: "Docs, examples, or wording",
+    "good first issue": "Small task for new contributors",
+    "beginner friendly": "Safe for first-time contributors",
+    "help wanted": "Open for community contribution",
+    community: "Contributor and discussion work",
+    cli: "CLI behavior or examples",
+    testing: "Tests, verification, or quality checks",
+    "developer tooling": "Automation, scripts, or maintainer workflow"
   };
 
   for (const label of labels) {
@@ -99,7 +113,7 @@ async function ensureLabels(owner: string, repo: string, token: string, labels: 
         body: JSON.stringify({
           name: label,
           color,
-          description: label === "daily starter issue" ? "Generated from the curated daily issue backlog" : undefined
+          description: labelDescriptions[label]
         })
       });
     } else if (!response.ok) {

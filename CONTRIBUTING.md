@@ -4,12 +4,13 @@ Thanks for helping improve Open Source Starter Lab.
 
 ## First-Time Contributor Path
 
-1. Find an issue labeled `good first issue`.
-2. Comment that you want to work on it.
-3. Create a branch.
-4. Make one focused change.
-5. Run `npm run check`.
-6. Open a pull request and include your test result.
+1. Read [docs/START_HERE.md](docs/START_HERE.md).
+2. Find an issue labeled `good first issue`.
+3. Comment that you want to work on it.
+4. Create a branch.
+5. Make one focused change.
+6. Run `npm run check`.
+7. Open a pull request and include your test result.
 
 ## Commands
 
@@ -37,6 +38,14 @@ npm run check
 - Add common Git errors.
 - Add test coverage for CLI behavior.
 - Improve issue templates.
+- Improve the daily starter issue backlog.
+- Help answer a beginner question in Discussions.
+
+## Choosing The Right Scope
+
+The best first contribution is small enough to review in a few minutes. If an idea touches many files, split it into a docs PR, a test PR, and a code PR.
+
+Use [docs/CONTRIBUTOR_LADDER.md](docs/CONTRIBUTOR_LADDER.md) to choose a level that fits you.
 
 ## Contributor Cards
 

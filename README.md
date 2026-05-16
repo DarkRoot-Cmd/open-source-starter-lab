@@ -6,7 +6,29 @@
 [![Good First Issues](https://img.shields.io/github/issues/P-r-e-m-i-u-m/open-source-starter-lab/good%20first%20issue?label=good%20first%20issues)](https://github.com/P-r-e-m-i-u-m/open-source-starter-lab/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 [![License: MIT](https://img.shields.io/badge/license-MIT-0f172a.svg)](LICENSE)
 
-Most beginner repos say "make your first PR" and stop there. This lab gives contributors small tasks, clear acceptance criteria, copy-paste commands, and a safe place to ask questions.
+Most beginner repos say "make your first PR" and stop there. This lab gives contributors small tasks, clear acceptance criteria, copy-paste commands, CI checks, and a safe place to ask questions.
+
+If you are new here, start with [docs/START_HERE.md](docs/START_HERE.md).
+
+## Pick Your Path
+
+| I want to... | Start here |
+| --- | --- |
+| Make my first pull request | [First PR guide](docs/FIRST_PULL_REQUEST.md) |
+| Find a small task | [Good first issues](https://github.com/P-r-e-m-i-u-m/open-source-starter-lab/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) |
+| Practice real code changes | [CLI docs](docs/CLI.md) and issues labeled `cli` |
+| Ask a GitHub question | [Discussions](https://github.com/P-r-e-m-i-u-m/open-source-starter-lab/discussions) |
+| Learn maintainer habits | [Maintainer playbook](docs/MAINTAINER_PLAYBOOK.md) |
+
+## Why This Repo Exists
+
+Open source is hard because the first steps are social and technical at the same time. This repo keeps the codebase small, the issues clear, and the review style friendly so contributors can practice the full workflow:
+
+1. Pick an issue.
+2. Make a focused change.
+3. Run checks.
+4. Open a PR with proof.
+5. Respond to review.
 
 ## What You Can Do Here
 
@@ -43,6 +65,8 @@ Start with one of these:
 - Improve one command example.
 - Add a common Git/GitHub error and its fix.
 - Add your contributor card in `contributors/`.
+- Add or improve one CLI smoke test.
+- Improve one daily starter issue idea.
 - Answer a beginner question in Discussions.
 
 Good first issues are listed here:
@@ -52,17 +76,17 @@ Good first issues are listed here:
 
 ```text
 .
-├── src/                  TypeScript CLI source
-├── tests/                Smoke tests
-├── docs/                 Beginner guides and maintainer playbooks
-├── examples/             Copy-paste examples
-├── contributors/         Contributor cards
-└── .github/              CI, templates, and community files
+|-- src/                  TypeScript CLI source
+|-- tests/                Smoke tests
+|-- docs/                 Beginner guides and maintainer playbooks
+|-- examples/             Copy-paste examples
+|-- contributors/         Contributor cards
+`-- .github/              CI, templates, and community files
 ```
 
 ## For Contributors
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md), pick one small issue, and comment before starting if you want it assigned.
+Read [CONTRIBUTING.md](CONTRIBUTING.md), pick one small issue, and comment before starting if you want it assigned. If you are not sure where to begin, use [docs/START_HERE.md](docs/START_HERE.md).
 
 A good pull request includes:
 

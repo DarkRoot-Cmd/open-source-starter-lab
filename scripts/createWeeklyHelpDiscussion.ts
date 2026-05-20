@@ -59,14 +59,14 @@ function getWeekStart(date = new Date()): Date {
 }
 
 function buildTitle(date = new Date()): string {
-  return `Who needs help this week? First PR support - ${formatDate(getWeekStart(date))}`;
+  return `Get assigned your first issue this week - ${formatDate(getWeekStart(date))}`;
 }
 
 function buildBody(): string {
   return [
-    "New to open source? Drop a comment here and I will suggest a small issue for your skill level.",
+    "Want a first issue but not sure where to start? Comment here and I will suggest one that fits your skill and time.",
     "",
-    "Comment with this:",
+    "Copy this:",
     "",
     "```md",
     "I know:",
@@ -86,7 +86,9 @@ function buildBody(): string {
     "",
     "I will reply with one issue, the first command to run, and what your pull request should prove.",
     "",
-    "If you already opened a PR, link it here too. I will help you get it review-ready."
+    "If you already opened a PR, link it here too. I will help you get it review-ready.",
+    "",
+    "If an issue looks confusing, do not guess. Ask here first and I will point you to the right one."
   ].join("\n");
 }
 
@@ -186,10 +188,10 @@ async function main(): Promise<void> {
   }
 
   const repository = requireEnv("GITHUB_REPOSITORY");
-  const token = process.env.GITHUB_TOKEN || process.env.MAINTAINER_TOKEN;
+  const tokens = [process.env.MAINTAINER_TOKEN, process.env.GITHUB_TOKEN].filter(Boolean) as string[];
   const [owner, repo] = repository.split("/");
 
-  if (!token) {
+  if (!tokens.length) {
     throw new Error("Missing GITHUB_TOKEN or MAINTAINER_TOKEN.");
   }
 
@@ -197,23 +199,34 @@ async function main(): Promise<void> {
     throw new Error(`Invalid GITHUB_REPOSITORY value: ${repository}`);
   }
 
-  const data = await getRepositoryData(owner, repo, token);
-  const category =
-    data.repository.discussionCategories.nodes.find((node) => node.slug === "q-a") ??
-    data.repository.discussionCategories.nodes.find((node) => node.name.toLowerCase() === "q&a");
+  let lastError: unknown;
+  for (const token of tokens) {
+    try {
+      const data = await getRepositoryData(owner, repo, token);
+      const category =
+        data.repository.discussionCategories.nodes.find((node) => node.slug === "q-a") ??
+        data.repository.discussionCategories.nodes.find((node) => node.name.toLowerCase() === "q&a");
 
-  if (!category) {
-    throw new Error("Could not find the Q&A discussion category.");
+      if (!category) {
+        throw new Error("Could not find the Q&A discussion category.");
+      }
+
+      const existing = data.repository.discussions.nodes.find((discussion) => discussion.title === title);
+      if (existing) {
+        console.log(`Weekly help discussion already exists: ${existing.url}`);
+        return;
+      }
+
+      const discussion = await createDiscussion(data.repository.id, category.id, title, body, token);
+      console.log(`Created weekly help discussion: ${discussion.url}`);
+      return;
+    } catch (error: unknown) {
+      lastError = error;
+      console.warn(error instanceof Error ? error.message : error);
+    }
   }
 
-  const existing = data.repository.discussions.nodes.find((discussion) => discussion.title === title);
-  if (existing) {
-    console.log(`Weekly help discussion already exists: ${existing.url}`);
-    return;
-  }
-
-  const discussion = await createDiscussion(data.repository.id, category.id, title, body, token);
-  console.log(`Created weekly help discussion: ${discussion.url}`);
+  throw lastError instanceof Error ? lastError : new Error("Could not create weekly help discussion.");
 }
 
 main().catch((error: unknown) => {

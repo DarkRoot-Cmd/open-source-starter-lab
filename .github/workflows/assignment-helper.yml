@@ -1,17 +1,17 @@
-name: Weekly Help Thread
+name: Assignment Helper
 
 on:
-  schedule:
-    - cron: "45 4 * * 1"
-  workflow_dispatch:
+  issue_comment:
+    types:
+      - created
 
 permissions:
   contents: read
-  discussions: write
+  issues: write
 
 jobs:
-  create-weekly-help-thread:
-    name: Create Weekly Discussion
+  reply-to-assignment-request:
+    name: Reply To Assignment Request
     runs-on: ubuntu-latest
 
     steps:
@@ -27,8 +27,8 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Create weekly help discussion
-        run: npm run discussion:weekly-help
+      - name: Reply
+        run: npm run issue:assignment-helper
         env:
           MAINTAINER_TOKEN: ${{ secrets.MAINTAINER_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}

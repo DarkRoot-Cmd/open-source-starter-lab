@@ -5,7 +5,7 @@ The weekly help thread is a recurring GitHub Discussion for new contributors who
 Every Monday, the workflow creates a Q&A Discussion titled:
 
 ```md
-Who needs help this week? First PR support - <week start date>
+Get assigned your first issue this week - <week start date>
 ```
 
 ## What Contributors Comment

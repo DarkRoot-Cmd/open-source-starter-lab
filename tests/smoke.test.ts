@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { buildChecklist } from "../src/checklist.js";
+import { findIssueFit } from "../src/issueFitFinder.js";
 import { issueIdeas } from "../src/issueIdeas.js";
 
 const beginner = buildChecklist("beginner");
@@ -13,5 +14,15 @@ assert.ok(maintainer.items.some((item) => item.id === "answers"));
 
 assert.ok(issueIdeas.length >= 5);
 assert.ok(issueIdeas.every((idea) => idea.acceptanceCriteria.length >= 3));
+
+const docsFit = findIssueFit("docs", "30m");
+assert.equal(docsFit.skill, "docs");
+assert.equal(docsFit.timeBudget, "30m");
+assert.ok(docsFit.issueSearchUrl.includes("no%3Aassignee"));
+assert.ok(docsFit.commentTemplate.includes("Please assign this to me"));
+
+const jsFit = findIssueFit("ts", "1h");
+assert.equal(jsFit.skill, "javascript");
+assert.ok(jsFit.proofChecklist.some((item) => item.includes("full project check")));
 
 console.log("Smoke tests passed.");

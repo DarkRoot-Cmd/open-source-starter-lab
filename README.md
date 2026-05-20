@@ -19,6 +19,7 @@ If you are new here, start with [docs/START_HERE.md](docs/START_HERE.md).
 | Make my first pull request | [First PR guide](docs/FIRST_PULL_REQUEST.md) |
 | Find a small task | [Good first issues](https://github.com/P-r-e-m-i-u-m/open-source-starter-lab/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) |
 | Choose the right first issue | [Choosing your first issue](docs/CHOOSING_FIRST_ISSUE.md) |
+| Find an issue by skill and time | [First Issue Fit Finder](docs/FIRST_ISSUE_FIT_FINDER.md) |
 | Pick by your skill | [Skill-based first issues](docs/SKILL_BASED_FIRST_ISSUES.md) |
 | Practice real code changes | [CLI docs](docs/CLI.md) and issues labeled `cli` |
 | Ask which issue to take | [Tell me your skill](https://github.com/P-r-e-m-i-u-m/open-source-starter-lab/discussions/35) |
@@ -64,6 +65,7 @@ Try the CLI:
 npm run build
 node dist/src/cli.js check --profile beginner
 node dist/src/cli.js issues
+node dist/src/cli.js fit --skill docs --time 30m
 ```
 
 ## Best First Contributions

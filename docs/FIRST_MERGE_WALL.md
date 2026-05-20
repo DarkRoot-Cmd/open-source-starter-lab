@@ -38,6 +38,12 @@ Keep your entry short and professional.
 - I worked on: rejected Git push guide
 - I learned: how clear recovery steps help beginners fix common Git errors safely
 
+### @oneofmyfriends
+
+- First merged PR: #38
+- I worked on: consistent Python wording in the skill-based issue guide
+- I learned: how a small wording fix can make contributor guidance clearer
+
 ## Why This Exists
 
 Open source can feel invisible when you are starting out. This page gives new contributors a simple record of their first merge and shows future visitors that real beginners are welcome here.

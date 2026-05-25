@@ -79,6 +79,11 @@ function formatDate(value: string): string {
   }).format(new Date(value));
 }
 
+function daysSince(value: string, now = new Date()): number {
+  const diffMs = now.getTime() - new Date(value).getTime();
+  return Math.max(0, Math.floor(diffMs / 86_400_000));
+}
+
 async function githubRequest<T>(path: string, token: string, options: RequestInit = {}): Promise<T> {
   const response = await fetch(`${apiBase}${path}`, {
     ...options,
@@ -212,7 +217,9 @@ function renderCandidate(candidate: QueueCandidate): string {
     (assignee) => assignee.login.toLowerCase() === candidate.requester.toLowerCase()
   );
   const assignedText = assigned ? "assigned" : "not assigned yet";
-  return `- @${candidate.requester} on [#${candidate.issue.number} ${candidate.issue.title}](${candidate.issue.html_url}) - ${assignedText}, asked ${formatDate(candidate.requestedAt)} ([comment](${candidate.commentUrl}))`;
+  const ageDays = daysSince(candidate.requestedAt);
+  const followUpText = candidate.hasOwnerReplyAfterRequest && ageDays >= 3 ? ", follow up" : "";
+  return `- @${candidate.requester} on [#${candidate.issue.number} ${candidate.issue.title}](${candidate.issue.html_url}) - ${assignedText}, asked ${formatDate(candidate.requestedAt)}${followUpText} ([comment](${candidate.commentUrl}))`;
 }
 
 function renderPr(pr: GitHubPullRequest): string {
@@ -259,7 +266,7 @@ function renderQueueBody(issues: GitHubIssue[], prs: GitHubPullRequest[], candid
     "",
     "## Maintainer Rule",
     "",
-    "If someone asks to work on an issue, reply with the exact first command and one proof item. Keep it short, warm, and specific.",
+    "If someone asks to work on an issue, reply with the exact first command and one proof item. If an assigned issue is marked `follow up`, ask whether they are still working on it before unassigning.",
     "",
     "<!-- oss-lab-contributor-queue -->"
   ].join("\n");

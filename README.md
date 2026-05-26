@@ -92,6 +92,7 @@ Before spending time here, check the live proof:
 | Join weekly help | [Weekly help thread](docs/WEEKLY_HELP_THREAD.md) |
 | Add your first merge | [First Merge Wall](docs/FIRST_MERGE_WALL.md) |
 | Learn maintainer habits | [Maintainer playbook](docs/MAINTAINER_PLAYBOOK.md) |
+| Launch and share the repo | [Launch playbook](docs/LAUNCH_PLAYBOOK.md) |
 | Share this with beginners | [Community discovery kit](docs/COMMUNITY_DISCOVERY_KIT.md) |
 | Reply in GitHub Community | [GitHub Community reply pack](docs/GITHUB_COMMUNITY_REPLY_PACK.md) |
 
@@ -193,6 +194,8 @@ Good questions include:
 
 If someone asks where to make a first pull request or first open-source contribution, use the copy-ready messages in [docs/COMMUNITY_DISCOVERY_KIT.md](docs/COMMUNITY_DISCOVERY_KIT.md).
 
+For a full launch plan with LinkedIn, X, Reddit, DEV, Hashnode, GitHub Community posts, reply templates, and a seven-day distribution plan, use [docs/LAUNCH_PLAYBOOK.md](docs/LAUNCH_PLAYBOOK.md).
+
 ## Project Structure
 
 ```text
@@ -232,6 +235,7 @@ See [docs/MAINTAINER_PLAYBOOK.md](docs/MAINTAINER_PLAYBOOK.md).
 ## Launch Kit
 
 Want to invite contributors? Use the copy-ready messages in
+[docs/LAUNCH_PLAYBOOK.md](docs/LAUNCH_PLAYBOOK.md). The shorter invite set is still available in
 [docs/COMMUNITY_LAUNCH_KIT.md](docs/COMMUNITY_LAUNCH_KIT.md).
 
 ## Daily Issue Bot

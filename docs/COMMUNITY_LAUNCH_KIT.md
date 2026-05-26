@@ -2,6 +2,8 @@
 
 Use this when inviting the first contributors. Keep the tone honest: this repo is for beginners, learning, and real contributions.
 
+For the full launch pack, including LinkedIn, X, Reddit, DEV, Hashnode, GitHub Community posts, reply templates, and a seven-day plan, use [LAUNCH_PLAYBOOK.md](LAUNCH_PLAYBOOK.md).
+
 ## Short LinkedIn Post
 
 ```md

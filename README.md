@@ -80,6 +80,7 @@ Before spending time here, check the live proof:
 | Pick by your skill | [Skill-based first issues](docs/SKILL_BASED_FIRST_ISSUES.md) |
 | Move after your first merge | [Contributor progress path](docs/CONTRIBUTOR_PROGRESS_PATH.md) |
 | Pick your second PR | [Second PR Path](docs/SECOND_PR_PATH.md) |
+| Understand PR welcome checks | [PR Welcome Guard](docs/PR_WELCOME_GUARD.md) |
 | Practice real code changes | [CLI docs](docs/CLI.md) and issues labeled `cli` |
 | Ask which issue to take | [Tell me your skill](https://github.com/P-r-e-m-i-u-m/open-source-starter-lab/discussions/35) |
 | Get assigned this week | [Weekly assignment thread](https://github.com/P-r-e-m-i-u-m/open-source-starter-lab/discussions/44) |
